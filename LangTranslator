@@ -1,0 +1,23 @@
+import googletrans
+import speech_recognition as sr
+import gtts
+
+reconize = sr.Recognizer()
+translator = googletrans.Translator()
+input_lang = 'fr'
+her_lang = 'fr'
+try:
+    with sr.Microphone() as source:
+        print('Speak Now')
+        voice = recognizer.listen(source)
+        text = recognizer.recognize_google(voice)
+        print(text)
+except:
+    pass
+translated = translator.translate('I love to code to all day, everyday',dest='fr')
+print(translated.text)
+converted_audio = gtts.gTTS(translated.text, lang='fr')
+print(googletrans.LANGUAGES)
+
+
+# print(googletrans.LANGUAGES)
